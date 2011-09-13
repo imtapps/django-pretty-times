@@ -9,7 +9,11 @@ REQUIREMENTS = [
     'django',
 ]
 
-TEST_REQUIREMENTS = []
+TEST_REQUIREMENTS = [
+    'django-jenkins',
+    'pep8',
+    'pyflakes',
+]
 
 def do_setup():
     setup(
@@ -20,7 +24,7 @@ def do_setup():
         description="pretty_times provides django template helpers for the py-pretty library.",
         long_description=open('README.txt', 'r').read(),
         url="http://github.com/imtapps/django-pretty-times",
-        packages=find_packages(),
+        packages=find_packages(exclude=['example']),
         install_requires=REQUIREMENTS,
         tests_require=TEST_REQUIREMENTS,
         test_suite='runtests.runtests',
