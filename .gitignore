@@ -3,4 +3,5 @@
 *.pyo
 dist/*
 *.egg-info/*
+*.egg
 jenkins_reports/*

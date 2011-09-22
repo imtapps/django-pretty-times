@@ -30,7 +30,7 @@ class PrettyTimeTests(unittest.TestCase):
         return pretty.date(my_datetime)
 
     def test_now(self):
-        self.assertEqual("now", self.apply_prettytime(datetime.today()))
+        self.assertEqual("just now", self.apply_prettytime(datetime.today()))
 
     def test_ten_seconds_ago(self):
         self.assertEqual("10 seconds ago", self.get_past_result(seconds=10))

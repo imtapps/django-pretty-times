@@ -21,7 +21,7 @@ def date(time):
 
 def get_small_increments(seconds, past):
     if seconds < 10:
-        result = 'now'
+        result = 'just now'
     elif seconds < 60:
         result = _pretty_format(seconds, 1, 'seconds', past)
     elif seconds < 120:
