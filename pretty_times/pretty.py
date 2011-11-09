@@ -1,9 +1,17 @@
-from datetime import datetime
+from datetime import datetime, tzinfo, timedelta
+
+class UTC(tzinfo): 
+    def utcoffset(self,dt): 
+        return timedelta(hours=0,minutes=0) 
+    def tzname(self,dt): 
+        return "UTC" 
+    def dst(self,dt): 
+        return timedelta(0)
 
 __all__ = ("date", )
 
 def date(time):
-    now = datetime.now()
+    now = get_now(time)
 
     if time > now:
         past = False
@@ -18,6 +26,13 @@ def date(time):
         return get_small_increments(diff.seconds, past)
     else:
         return get_large_increments(days, past)
+
+def get_now(time):
+    if time.tzinfo:
+        utc = UTC()
+    else:
+        utc = None
+    return datetime.now(utc)
 
 def get_small_increments(seconds, past):
     if seconds < 10:
