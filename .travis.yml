@@ -5,4 +5,3 @@ install:
 	- pip install ./
 script:
 	- python runtests.py
-
