@@ -10,6 +10,8 @@ REQUIREMENTS = [
 ]
 
 TEST_REQUIREMENTS = [
+    'pylint',
+    'coverage',
     'django-jenkins',
     'pep8',
     'pyflakes',
