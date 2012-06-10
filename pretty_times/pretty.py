@@ -1,9 +1,9 @@
-from datetime import datetime
+from django.utils import timezone
 
 __all__ = ("date", )
 
 def date(time):
-    now = datetime.now()
+    now = timezone.now()
 
     if time > now:
         past = False
