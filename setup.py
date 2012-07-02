@@ -10,11 +10,11 @@ REQUIREMENTS = [
 ]
 
 TEST_REQUIREMENTS = [
-    'pylint',
     'coverage',
-    'django-jenkins',
     'pep8',
     'pyflakes',
+    'django_nose',
+    'nosexcover',
 ]
 
 def do_setup():
@@ -29,7 +29,6 @@ def do_setup():
         packages=find_packages(exclude=['example']),
         install_requires=REQUIREMENTS,
         tests_require=TEST_REQUIREMENTS,
-        test_suite='runtests.runtests',
         zip_safe=False,
         classifiers = [
             "Development Status :: 3 - Alpha",
@@ -67,7 +66,7 @@ class PipDependencies(Command):
         return re.sub(re.compile(r'([<>])'), r'\\\1', command_line_deps)
 
     def run(self):
-        os.system("pip %s %s" % (self.pip_command, self.get_all_dependencies()))
+        os.system("pip %s %s -i http://localhost:8888/simple/" % (self.pip_command, self.get_all_dependencies()))
 
 class InstallDependencies(PipDependencies):
     pip_command = 'install'
