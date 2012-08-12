@@ -2,8 +2,10 @@ from datetime import datetime
 
 __all__ = ("date", )
 
+
 def date(time):
-    now = datetime.now()
+    # calculate "now" in the timezone (if any) of the given time
+    now = datetime.now(time.tzinfo)
 
     if time > now:
         past = False
