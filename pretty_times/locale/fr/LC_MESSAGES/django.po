@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-11 10:41-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#: pretty.py:49
+msgid "just now"
+msgstr ""
+
+#: pretty.py:51
+msgid "seconds"
+msgstr "secondes"
+
+#: pretty.py:53
+msgid "a minute ago"
+msgstr ""
+
+#: pretty.py:53
+msgid "in a minute"
+msgstr ""
+
+#: pretty.py:55
+msgid "minutes"
+msgstr ""
+
+#: pretty.py:57
+msgid "an hour ago"
+msgstr ""
+
+#: pretty.py:57
+msgid "in an hour"
+msgstr ""
+
+#: pretty.py:59
+msgid "hours"
+msgstr ""
+
+#: pretty.py:65
+msgid "yesterday"
+msgstr ""
+
+#: pretty.py:65
+msgid "tomorrow"
+msgstr ""
+
+#: pretty.py:67
+msgid "days"
+msgstr ""
+
+#: pretty.py:69
+msgid "last week"
+msgstr ""
+
+#: pretty.py:69
+msgid "next week"
+msgstr ""
+
+#: pretty.py:71
+msgid "weeks"
+msgstr ""
+
+#: pretty.py:73
+msgid "last month"
+msgstr ""
+
+#: pretty.py:73
+msgid "next month"
+msgstr ""
+
+#: pretty.py:75
+msgid "months"
+msgstr ""
+
+#: pretty.py:77
+msgid "last year"
+msgstr ""
+
+#: pretty.py:77
+msgid "next year"
+msgstr ""
+
+#: pretty.py:79
+msgid "years"
+msgstr ""
+
+#: pretty.py:88
+#, python-format
+msgctxt "Moment in the past"
+msgid "%(amount)d %(quantity)s ago"
+msgstr "ll ya %(amount)d %(quantity)s"
+
+#: pretty.py:93
+#, python-format
+msgctxt "Moment in the future"
+msgid "in %(amount)d %(quantity)s"
+msgstr "en %(amount)d %(quantity)s"

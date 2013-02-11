@@ -1,4 +1,5 @@
 from django.utils import unittest
+from django.utils import translation
 from django.template import Template, Context
 from pretty_times import pretty
 from datetime import datetime, timedelta
@@ -49,6 +50,20 @@ class PrettyTimeTests(unittest.TestCase):
 
     def test_in_ten_seconds(self):
         self.assertEqual("in 10 seconds", self.get_future_result(seconds=10))
+
+    def test_french_in_ten_second(self):
+        try:
+            translation.activate('fr')
+            self.assertEqual("en 10 secondes", self.get_future_result(seconds=10))
+        finally:
+            translation.activate('en')
+
+    def test_french_ten_seconds_ago(self):
+        try:
+            translation.activate('fr')
+            self.assertEqual("ll ya 10 secondes", self.get_past_result(seconds=10))
+        finally:
+            translation.activate('en')
 
     def test_thirty_seconds_ago(self):
         self.assertEqual("30 seconds ago", self.get_past_result(seconds=30))

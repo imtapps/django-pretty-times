@@ -15,6 +15,9 @@ DATABASES = {
     }
 }
 
+USE_I18N = True
+LANGUAGE_CODE = 'en'
+
 PROJECT_APPS = ('pretty_times',)
 
 INSTALLED_APPS = ('django_nose', ) + PROJECT_APPS
