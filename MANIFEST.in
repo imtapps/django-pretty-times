@@ -1,1 +1,2 @@
 recursive-include requirements *
+include README.rst
