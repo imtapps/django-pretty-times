@@ -37,8 +37,11 @@ class PrettyTimeTests(unittest.TestCase):
             """based on example tzinfo classes from:
             http://docs.python.org/release/2.5.2/lib/datetime-tzinfo.html
             """
-            def utcoffset(self, dt): return timedelta(0)
-            def dst(self, dt): return timedelta(0)
+            def utcoffset(self, dt):
+                return timedelta(0)
+
+            def dst(self, dt):
+                return timedelta(0)
 
         dt = datetime.utcnow().replace(tzinfo=UTC())
         self.assertEqual("just now", self.apply_prettytime(dt))

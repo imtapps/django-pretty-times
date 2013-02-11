@@ -1,4 +1,4 @@
-from datetime import datetime, tzinfo, timedelta
+from datetime import datetime
 from django.utils.translation import pgettext, ugettext as _
 
 
