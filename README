@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/imtapps/django-pretty-times.png?branch=master)](https://travis-ci.org/imtapps/django-pretty-times)
+.. image:: https://travis-ci.org/imtapps/django-pretty-times.png?branch=master
 
 Almost all of this was borrowed from the py-pretty library,
 tested then refactored.
@@ -6,6 +6,7 @@ tested then refactored.
 py-pretty Functionaility
 ========================
 ::
+
 
     >>> from datetime import datetime, timedelta
     >>> from pretty_times import pretty
