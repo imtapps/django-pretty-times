@@ -1,12 +1,24 @@
-
 from django.utils import unittest
-
 from django.template import Template, Context
 from pretty_times import pretty
-
 from datetime import datetime, timedelta
-
 import operator
+
+
+class UTCTests(unittest.TestCase):
+
+    def setUp(self):
+        self.sut = pretty.UTC()
+
+    def test_utc_tzname(self):
+        self.assertEqual("UTC", self.sut.tzname(datetime.today()))
+
+    def test_utc_utcoffset(self):
+        self.assertEqual(timedelta(0), self.sut.utcoffset(datetime.today()))
+
+    def test_utc_dst(self):
+        self.assertEqual(timedelta(0), self.sut.dst(datetime.today()))
+
 
 class PrettyTimeTests(unittest.TestCase):
 
@@ -74,6 +86,12 @@ class PrettyTimeTests(unittest.TestCase):
     def test_tomorrow(self):
         self.assertEqual("tomorrow", self.get_future_result(days=1))
 
+    def test_next_week(self):
+        self.assertEqual("next week", self.get_future_result(days=8))
+
+    def test_last_week(self):
+        self.assertEqual("last week", self.get_past_result(days=8))
+
     def test_two_days_ago(self):
         self.assertEqual("2 days ago", self.get_past_result(days=2))
 
@@ -109,6 +127,7 @@ class PrettyTimeTests(unittest.TestCase):
 
     def test_in_two_years(self):
         self.assertEqual("in 2 years", self.get_future_result(days=733))
+
 
 class PrettyTimeTemplateTagTests(PrettyTimeTests):
 

@@ -1,0 +1,5 @@
+coverage
+flake8
+nose>=1.2.1
+django_nose
+nosexcover

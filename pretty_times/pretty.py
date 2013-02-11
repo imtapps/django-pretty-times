@@ -1,14 +1,20 @@
 from datetime import datetime, tzinfo, timedelta
 
-class UTC(tzinfo): 
-    def utcoffset(self,dt): 
-        return timedelta(hours=0,minutes=0) 
-    def tzname(self,dt): 
-        return "UTC" 
-    def dst(self,dt): 
-        return timedelta(0)
 
 __all__ = ("date", )
+
+
+class UTC(tzinfo):
+
+    def utcoffset(self, dt):
+        return timedelta(hours=0, minutes=0)
+
+    def tzname(self, dt):
+        return "UTC"
+
+    def dst(self, dt):
+        return timedelta(0)
+
 
 def date(time):
     now = get_now(time)
@@ -27,12 +33,14 @@ def date(time):
     else:
         return get_large_increments(days, past)
 
+
 def get_now(time):
     if time.tzinfo:
         utc = UTC()
     else:
         utc = None
     return datetime.now(utc)
+
 
 def get_small_increments(seconds, past):
     if seconds < 10:
@@ -48,6 +56,7 @@ def get_small_increments(seconds, past):
     else:
         result = _pretty_format(seconds, 3600, 'hours', past)
     return result
+
 
 def get_large_increments(days, past):
     if days == 1:
@@ -67,6 +76,7 @@ def get_large_increments(days, past):
     else:
         result = _pretty_format(days, 365, 'years', past)
     return result
+
 
 def _pretty_format(diff_amount, units, text, past):
     pretty_time = (diff_amount + units / 2) / units

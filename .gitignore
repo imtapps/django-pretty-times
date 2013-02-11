@@ -8,3 +8,5 @@ jenkins_reports/*
 coverage.xml
 .coverage
 nosetests.xml
+*~
+*#
