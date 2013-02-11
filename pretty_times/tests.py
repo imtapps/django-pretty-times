@@ -20,6 +20,13 @@ class UTCTests(unittest.TestCase):
     def test_utc_dst(self):
         self.assertEqual(timedelta(0), self.sut.dst(datetime.today()))
 
+    def test_get_now_with_naive_datetime(self):
+        self.assertEqual(None, pretty.get_now(datetime.today()).tzinfo)
+
+    def test_get_now_with_aware_datetime(self):
+        our_date = datetime.now(self.sut)
+        self.assertNotEqual(None, pretty.get_now(our_date))
+
 
 class PrettyTimeTests(unittest.TestCase):
 
@@ -103,6 +110,12 @@ class PrettyTimeTests(unittest.TestCase):
 
     def test_next_week(self):
         self.assertEqual("next week", self.get_future_result(days=8))
+
+    def test_two_weeks_ago(self):
+        self.assertEqual("2 weeks ago", self.get_past_result(days=15))
+
+    def test_in_two_weeks(self):
+        self.assertEqual("in 2 weeks", self.get_future_result(days=15))
 
     def test_last_week(self):
         self.assertEqual("last week", self.get_past_result(days=8))

@@ -1,5 +1,4 @@
 from datetime import datetime, tzinfo, timedelta
-from django.utils import timezone
 from django.utils.translation import pgettext, ugettext as _
 
 
@@ -92,4 +91,4 @@ def _pretty_format(diff_amount, units, text, past):
             'Moment in the future',
             "in %(amount)d %(quantity)s"
         )
-    return base  % dict(amount=pretty_time, quantity=text)
+    return base % dict(amount=pretty_time, quantity=text)

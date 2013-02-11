@@ -3,7 +3,9 @@ branches:
     - master
 language: python
 python: "2.7"
-install: "pip install -r requirements/test.txt"
+install:
+  - pip install -r requirements/test.txt
+  - cd pretty_times && django-admin.py compilemessages && cd ..
 script:
   - python example/manage.py test --with-coverage --cover-package=pretty_times --cover-min-percentage=100
   - flake8 pretty_times --max-line-length=120
