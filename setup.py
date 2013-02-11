@@ -5,7 +5,7 @@ import re
 
 setup(
     name="django-pretty-times",
-    version='0.0.4',
+    version='0.0.5',
     author="imtapps",
     author_email="imtapps@apps-system.com",
     description="pretty_times provides django template helpers for the py-pretty library.",
