@@ -2,30 +2,8 @@ from django.utils import unittest
 from django.utils import translation
 from django.template import Template, Context
 from pretty_times import pretty
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, tzinfo
 import operator
-
-
-class UTCTests(unittest.TestCase):
-
-    def setUp(self):
-        self.sut = pretty.UTC()
-
-    def test_utc_tzname(self):
-        self.assertEqual("UTC", self.sut.tzname(datetime.today()))
-
-    def test_utc_utcoffset(self):
-        self.assertEqual(timedelta(0), self.sut.utcoffset(datetime.today()))
-
-    def test_utc_dst(self):
-        self.assertEqual(timedelta(0), self.sut.dst(datetime.today()))
-
-    def test_get_now_with_naive_datetime(self):
-        self.assertEqual(None, pretty.get_now(datetime.today()).tzinfo)
-
-    def test_get_now_with_aware_datetime(self):
-        our_date = datetime.now(self.sut)
-        self.assertNotEqual(None, pretty.get_now(our_date))
 
 
 class PrettyTimeTests(unittest.TestCase):
@@ -51,6 +29,19 @@ class PrettyTimeTests(unittest.TestCase):
 
     def test_now(self):
         self.assertEqual("just now", self.apply_prettytime(datetime.today()))
+
+    def test_now_tz(self):
+        """test that non-naive datetimes are handled"""
+
+        class UTC(tzinfo):
+            """based on example tzinfo classes from:
+            http://docs.python.org/release/2.5.2/lib/datetime-tzinfo.html
+            """
+            def utcoffset(self, dt): return timedelta(0)
+            def dst(self, dt): return timedelta(0)
+
+        dt = datetime.utcnow().replace(tzinfo=UTC())
+        self.assertEqual("just now", self.apply_prettytime(dt))
 
     def test_ten_seconds_ago(self):
         self.assertEqual("10 seconds ago", self.get_past_result(seconds=10))

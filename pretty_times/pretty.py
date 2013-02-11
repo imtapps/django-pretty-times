@@ -5,20 +5,9 @@ from django.utils.translation import pgettext, ugettext as _
 __all__ = ("date", )
 
 
-class UTC(tzinfo):
-
-    def utcoffset(self, dt):
-        return timedelta(hours=0, minutes=0)
-
-    def tzname(self, dt):
-        return "UTC"
-
-    def dst(self, dt):
-        return timedelta(0)
-
-
 def date(time):
-    now = get_now(time)
+
+    now = datetime.now(time.tzinfo)
 
     if time > now:
         past = False
@@ -33,14 +22,6 @@ def date(time):
         return get_small_increments(diff.seconds, past)
     else:
         return get_large_increments(days, past)
-
-
-def get_now(time):
-    if time.tzinfo:
-        utc = UTC()
-    else:
-        utc = None
-    return datetime.now(utc)
 
 
 def get_small_increments(seconds, past):
