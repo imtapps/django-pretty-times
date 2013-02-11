@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/imtapps/django-pretty-times.png?branch=master)](https://travis-ci.org/imtapps/django-pretty-times)
+
 Almost all of this was borrowed from the py-pretty library,
 tested then refactored.
 
