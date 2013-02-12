@@ -20,7 +20,7 @@ msgstr ""
 
 #: pretty.py:49
 msgid "just now"
-msgstr ""
+msgstr "à l'instant"
 
 #: pretty.py:51
 msgid "seconds"
@@ -28,84 +28,84 @@ msgstr "secondes"
 
 #: pretty.py:53
 msgid "a minute ago"
-msgstr ""
+msgstr "il y a une minute"
 
 #: pretty.py:53
 msgid "in a minute"
-msgstr ""
+msgstr "dans une minute"
 
 #: pretty.py:55
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 #: pretty.py:57
 msgid "an hour ago"
-msgstr ""
+msgstr "il y a une heure"
 
 #: pretty.py:57
 msgid "in an hour"
-msgstr ""
+msgstr "dans une heure"
 
 #: pretty.py:59
 msgid "hours"
-msgstr ""
+msgstr "heures"
 
 #: pretty.py:65
 msgid "yesterday"
-msgstr ""
+msgstr "hier"
 
 #: pretty.py:65
 msgid "tomorrow"
-msgstr ""
+msgstr "demain"
 
 #: pretty.py:67
 msgid "days"
-msgstr ""
+msgstr "jours"
 
 #: pretty.py:69
 msgid "last week"
-msgstr ""
+msgstr "la semaine dernière"
 
 #: pretty.py:69
 msgid "next week"
-msgstr ""
+msgstr "la semaine prochaine"
 
 #: pretty.py:71
 msgid "weeks"
-msgstr ""
+msgstr "semaines"
 
 #: pretty.py:73
 msgid "last month"
-msgstr ""
+msgstr "le mois dernier"
 
 #: pretty.py:73
 msgid "next month"
-msgstr ""
+msgstr "le mois prochain"
 
 #: pretty.py:75
 msgid "months"
-msgstr ""
+msgstr "mois"
 
 #: pretty.py:77
 msgid "last year"
-msgstr ""
+msgstr "l'année dernière"
 
 #: pretty.py:77
 msgid "next year"
-msgstr ""
+msgstr "l'année prochaine"
 
 #: pretty.py:79
 msgid "years"
-msgstr ""
+msgstr "ans"
 
 #: pretty.py:88
 #, python-format
 msgctxt "Moment in the past"
 msgid "%(amount)d %(quantity)s ago"
-msgstr "ll ya %(amount)d %(quantity)s"
+msgstr "il y a %(amount)d %(quantity)s"
 
 #: pretty.py:93
 #, python-format
 msgctxt "Moment in the future"
 msgid "in %(amount)d %(quantity)s"
-msgstr "en %(amount)d %(quantity)s"
+msgstr "dans %(amount)d %(quantity)s"
