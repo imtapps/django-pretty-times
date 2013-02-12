@@ -55,14 +55,14 @@ class PrettyTimeTests(unittest.TestCase):
     def test_french_in_ten_second(self):
         try:
             translation.activate('fr')
-            self.assertEqual("en 10 secondes", self.get_future_result(seconds=10))
+            self.assertEqual("dans 10 secondes", self.get_future_result(seconds=10))
         finally:
             translation.activate('en')
 
     def test_french_ten_seconds_ago(self):
         try:
             translation.activate('fr')
-            self.assertEqual("ll ya 10 secondes", self.get_past_result(seconds=10))
+            self.assertEqual("il y a 10 secondes", self.get_past_result(seconds=10))
         finally:
             translation.activate('en')
 
