@@ -5,9 +5,13 @@ from django.utils.translation import pgettext, ugettext as _
 __all__ = ("date", )
 
 
+def get_now(time):
+    return datetime.now(time.tzinfo)
+
+
 def date(time):
 
-    now = datetime.now(time.tzinfo)
+    now = get_now(time)
 
     if time > now:
         past = False
@@ -16,7 +20,7 @@ def date(time):
         past = True
         diff = now - time
 
-    days = diff.days
+    days = abs(time.date() - now.date()).days
 
     if days is 0:
         return get_small_increments(diff.seconds, past)

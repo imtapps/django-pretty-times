@@ -1,6 +1,7 @@
 import operator
 from datetime import datetime, timedelta, tzinfo
 
+import mock
 from django.utils import unittest
 from django.utils import translation
 from django.template import Template, Context
@@ -100,6 +101,12 @@ class PrettyTimeTests(unittest.TestCase):
 
     def test_yesterday(self):
         self.assertEqual("yesterday", self.get_past_result(days=1))
+
+    @mock.patch('pretty_times.pretty.get_now')
+    def test_yesterday_with_odd_times(self, get_now):
+        get_now.return_value = datetime(2013, 5, 27, 11, 18)
+        future_date = datetime(2013, 5, 29, 3, 15)
+        self.assertEqual("in 2 days", pretty.date(future_date))
 
     def test_tomorrow(self):
         self.assertEqual("tomorrow", self.get_future_result(days=1))
