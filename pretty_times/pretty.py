@@ -72,4 +72,4 @@ def _pretty_format(diff_amount, units, text, past):
             'Moment in the future',
             "in %(amount)d %(quantity)s"
         )
-    return base % dict(amount=pretty_time, quantity=text)
+    return base % dict(amount=abs(pretty_time), quantity=text)
