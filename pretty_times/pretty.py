@@ -16,7 +16,7 @@ def date(time):
         past = True
         diff = now - time
 
-    days = (time.date() - now.date()).days
+    days = abs((time.date() - now.date()).days)
 
     if days is 0:
         return get_small_increments(diff.seconds, past)
