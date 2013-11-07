@@ -60,8 +60,28 @@ def get_large_increments(days, past):
     return result
 
 
+def pluralization(n, quantity):
+    #supports pl
+    bits = quantity.split(',')
+    if len(bits) > 3:
+        bits = bits[0:3]
+    elif len(bits) == 1:
+        bits.append(bits[0])
+        bits.append(bits[0])
+    elif len(bits) == 2:
+        bits.append(bits[1])
+
+    if n==1:
+        return bits[0]
+    elif n%10>=2 and n%10<=4 and (n%100<10 or n%100>=20):
+        return bits[1]
+    else:
+        return bits[2]
+
+
 def _pretty_format(diff_amount, units, text, past):
     pretty_time = (diff_amount + units / 2) / units
+    text = pluralization(pretty_time, text)
     if past:
         base = pgettext(
             'Moment in the past',
