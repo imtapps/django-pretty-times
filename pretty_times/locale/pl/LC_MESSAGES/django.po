@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-07 14:29+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2)\n"
+
+#: pretty.py:29
+msgid "just now"
+msgstr "w tej chwili"
+
+#: pretty.py:31
+msgid "seconds"
+msgstr "sekundę,sekundy,sekund"
+
+#: pretty.py:33
+msgid "a minute ago"
+msgstr "minutę temu"
+
+#: pretty.py:33
+msgid "in a minute"
+msgstr "za minutę"
+
+#: pretty.py:35
+msgid "minutes"
+msgstr "minutę,minuty,minut"
+
+#: pretty.py:37
+msgid "an hour ago"
+msgstr "ponad godzinę temu"
+
+#: pretty.py:37
+msgid "in an hour"
+msgstr "za ponad godzinę"
+
+#: pretty.py:39
+msgid "hours"
+msgstr "godzinę,godziny,godzin"
+
+#: pretty.py:45
+msgid "yesterday"
+msgstr "wczoraj"
+
+#: pretty.py:45
+msgid "tomorrow"
+msgstr "jutro"
+
+#: pretty.py:47
+msgid "days"
+msgstr "dzień,dni"
+
+#: pretty.py:49
+msgid "last week"
+msgstr "ponad tydzień temu"
+
+#: pretty.py:49
+msgid "next week"
+msgstr "za ponad tydzień"
+
+#: pretty.py:51
+msgid "weeks"
+msgstr "tydzień,tygodnie,tygodni"
+
+#: pretty.py:53
+msgid "last month"
+msgstr "ponad miesiąc temu"
+
+#: pretty.py:53
+msgid "next month"
+msgstr "za ponad miesiąć"
+
+#: pretty.py:55
+msgid "months"
+msgstr "miesiąc,miesiące,miesięcy"
+
+#: pretty.py:57
+msgid "last year"
+msgstr "ponad rok temu"
+
+#: pretty.py:57
+msgid "next year"
+msgstr "za ponad rok"
+
+#: pretty.py:59
+msgid "years"
+msgstr "rok,lata,lat"
+
+#: pretty.py:90
+#, python-format
+msgctxt "Moment in the past"
+msgid "%(amount)d %(quantity)s ago"
+msgstr "%(amount)d %(quantity)s temu"
+
+#: pretty.py:95
+#, python-format
+msgctxt "Moment in the future"
+msgid "in %(amount)d %(quantity)s"
+msgstr "za %(amount)d %(quantity)s"

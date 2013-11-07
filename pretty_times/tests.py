@@ -66,6 +66,34 @@ class PrettyTimeTests(unittest.TestCase):
         finally:
             translation.activate('en')
 
+    def test_polish_in_ten_second(self):
+        try:
+            translation.activate('pl')
+            self.assertEqual("za 10 sekund", self.get_future_result(seconds=10))
+        finally:
+            translation.activate('en')
+
+    def test_polish_ten_seconds_ago(self):
+        try:
+            translation.activate('pl')
+            self.assertEqual("za 10 sekund", self.get_future_result(seconds=10))
+        finally:
+            translation.activate('en')
+
+    def test_polish_in_two_second(self):
+        try:
+            translation.activate('pl')
+            self.assertEqual("za 22 sekundy", self.get_future_result(seconds=22))
+        finally:
+            translation.activate('en')
+
+    def test_polish_two_seconds_ago(self):
+        try:
+            translation.activate('pl')
+            self.assertEqual("22 sekundy temu", self.get_past_result(seconds=22))
+        finally:
+            translation.activate('en')
+
     def test_thirty_seconds_ago(self):
         self.assertEqual("30 seconds ago", self.get_past_result(seconds=30))
 
