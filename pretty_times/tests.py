@@ -1,9 +1,11 @@
+import operator
+from datetime import datetime, timedelta, tzinfo
+
 from django.utils import unittest
 from django.utils import translation
 from django.template import Template, Context
+
 from pretty_times import pretty
-from datetime import datetime, timedelta, tzinfo
-import operator
 
 
 class PrettyTimeTests(unittest.TestCase):
@@ -12,7 +14,7 @@ class PrettyTimeTests(unittest.TestCase):
         return self.get_result(operator.sub, **kwargs)
 
     def get_future_result(self, **kwargs):
-        #because the gap between now and the future is rapidly closing
+        # because the gap between now and the future is rapidly closing
         if 'seconds' in kwargs:
             kwargs['seconds'] += 1
         else:
