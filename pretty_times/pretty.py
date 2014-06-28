@@ -16,7 +16,7 @@ def date(time):
         past = True
         diff = now - time
 
-    days = diff.days
+    days = (time.date() - now.date()).days
 
     if days is 0:
         return get_small_increments(diff.seconds, past)
@@ -72,4 +72,4 @@ def _pretty_format(diff_amount, units, text, past):
             'Moment in the future',
             "in %(amount)d %(quantity)s"
         )
-    return base % dict(amount=pretty_time, quantity=text)
+    return base % dict(amount=abs(pretty_time), quantity=text)
