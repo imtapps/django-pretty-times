@@ -1,11 +1,9 @@
 from setuptools import find_packages
-from distutils.core import Command, setup
-import os
-import re
+from distutils.core import setup
 
 setup(
     name="django-pretty-times",
-    version='0.1.0',
+    version='0.2.0',
     author="imtapps",
     author_email="imtapps@apps-system.com",
     description="pretty_times provides django template helpers for the py-pretty library.",
@@ -15,7 +13,7 @@ setup(
     install_requires=file('requirements/base.txt').read().split("\n"),
     include_package_data=True,
     zip_safe=False,
-    classifiers = [
+    classifiers=[
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: Django",
