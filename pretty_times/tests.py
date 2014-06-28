@@ -103,10 +103,22 @@ class PrettyTimeTests(unittest.TestCase):
         self.assertEqual("yesterday", self.get_past_result(days=1))
 
     @mock.patch('pretty_times.pretty.get_now')
-    def test_yesterday_with_odd_times(self, get_now):
+    def test_dates_used_for_time_and_now_returns_in_two_days(self, get_now):
         get_now.return_value = datetime(2013, 5, 27, 11, 18)
         future_date = datetime(2013, 5, 29, 3, 15)
         self.assertEqual("in 2 days", pretty.date(future_date))
+
+    @mock.patch('pretty_times.pretty.get_now')
+    def test_in_hours_when_less_than_24_hours(self, get_now):
+        get_now.return_value = datetime(2013, 5, 27, 11, 18)
+        future_date = datetime(2013, 5, 28, 10, 15)
+        self.assertEqual("in 23 hours", pretty.date(future_date))
+
+    @mock.patch('pretty_times.pretty.get_now')
+    def test_tomorrow_when_more_than_24_hours(self, get_now):
+        get_now.return_value = datetime(2013, 5, 27, 11, 18)
+        future_date = datetime(2013, 5, 28, 11, 19)
+        self.assertEqual("tomorrow", pretty.date(future_date))
 
     def test_tomorrow(self):
         self.assertEqual("tomorrow", self.get_future_result(days=1))

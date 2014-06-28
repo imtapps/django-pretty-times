@@ -22,7 +22,7 @@ def date(time):
 
     days = abs(time.date() - now.date()).days
 
-    if days is 0:
+    if days is 0 or diff.total_seconds() < 60 * 60 * 24:
         return get_small_increments(diff.seconds, past)
     else:
         return get_large_increments(days, past)
