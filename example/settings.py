@@ -23,3 +23,5 @@ PROJECT_APPS = ('pretty_times',)
 INSTALLED_APPS = ('django_nose', ) + PROJECT_APPS
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+SECRET_KEY = 'abc123'
