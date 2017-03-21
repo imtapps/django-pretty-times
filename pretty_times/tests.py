@@ -2,7 +2,7 @@ import operator
 from datetime import datetime, timedelta, tzinfo
 
 import mock
-from django.utils import unittest
+import unittest
 from django.utils import translation
 from django.template import Template, Context
 
