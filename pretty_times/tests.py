@@ -40,6 +40,7 @@ class PrettyTimeTests(unittest.TestCase):
             """based on example tzinfo classes from:
             http://docs.python.org/release/2.5.2/lib/datetime-tzinfo.html
             """
+
             def utcoffset(self, dt):
                 return timedelta(0)
 

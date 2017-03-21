@@ -1,7 +1,6 @@
 from django.template import Library
 from pretty_times import pretty
 
-
 register = Library()
 
 
