@@ -28,7 +28,7 @@ def date(time):
         return get_large_increments(days, past)
 
 
-def get_small_increments(seconds, past):
+def get_small_increments(seconds, past):  # noqa: C901
     if seconds < 10:
         result = _('just now')
     elif seconds < 60:
@@ -44,7 +44,7 @@ def get_small_increments(seconds, past):
     return result
 
 
-def get_large_increments(days, past):
+def get_large_increments(days, past):  # noqa: C901
     if days == 1:
         result = past and _('yesterday') or _('tomorrow')
     elif days < 7:
