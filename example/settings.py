@@ -18,10 +18,26 @@ DATABASES = {
 USE_I18N = True
 LANGUAGE_CODE = 'en'
 
-PROJECT_APPS = ('pretty_times',)
+PROJECT_APPS = ('pretty_times', )
 
 INSTALLED_APPS = ('django_nose', ) + PROJECT_APPS
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 SECRET_KEY = 'abc123'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]

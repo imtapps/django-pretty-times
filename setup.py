@@ -7,10 +7,10 @@ setup(
     author="imtapps",
     author_email="imtapps@apps-system.com",
     description="pretty_times provides django template helpers for the py-pretty library.",
-    long_description=file('README.rst', 'r').read(),
+    long_description=open('README.rst', 'r').read(),
     url="http://github.com/imtapps/django-pretty-times",
     packages=find_packages(exclude=['example']),
-    install_requires=file('requirements/base.txt').read().split("\n"),
+    install_requires=open('requirements/base.txt').read().split("\n"),
     include_package_data=True,
     zip_safe=False,
     classifiers=[
