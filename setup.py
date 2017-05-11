@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name="django-pretty-times",
-    version='0.3.0',
+    version='0.3.1',
     author="imtapps",
     author_email="imtapps@apps-system.com",
     description="pretty_times provides django template helpers for the py-pretty library.",
