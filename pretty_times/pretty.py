@@ -1,7 +1,6 @@
 from datetime import datetime
 from django.utils.translation import pgettext, ugettext as _
 
-
 __all__ = ("date", )
 
 
@@ -28,7 +27,7 @@ def date(time):
         return get_large_increments(days, past)
 
 
-def get_small_increments(seconds, past):
+def get_small_increments(seconds, past):  # noqa: C901
     if seconds < 10:
         result = _('just now')
     elif seconds < 60:
@@ -44,7 +43,7 @@ def get_small_increments(seconds, past):
     return result
 
 
-def get_large_increments(days, past):
+def get_large_increments(days, past):  # noqa: C901
     if days == 1:
         result = past and _('yesterday') or _('tomorrow')
     elif days < 7:
@@ -67,13 +66,7 @@ def get_large_increments(days, past):
 def _pretty_format(diff_amount, units, text, past):
     pretty_time = (diff_amount + units / 2) / units
     if past:
-        base = pgettext(
-            'Moment in the past',
-            "%(amount)d %(quantity)s ago"
-        )
+        base = pgettext('Moment in the past', "%(amount)d %(quantity)s ago")
     else:
-        base = pgettext(
-            'Moment in the future',
-            "in %(amount)d %(quantity)s"
-        )
+        base = pgettext('Moment in the future', "in %(amount)d %(quantity)s")
     return base % dict(amount=pretty_time, quantity=text)
